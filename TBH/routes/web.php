@@ -19,8 +19,15 @@ Route::get('/', function () {
 Route::get('/match', function () {
     return view('match');
 });
+Route::get('/login', function () {
+    return view('login');
+});
 
 
 Route::get('/form', 'FormController@index')->name('form');
 Route::post('/proses', 'FormController@proses')->name('proses.form');
+
+Route::get('/login', 'Auth\LoginController@showLoginForm')->name('login');
+Route::post('/login', 'Auth\LoginController@login');
+
 

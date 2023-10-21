@@ -16,3 +16,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/match', function () {
+    return view('match');
+});
+
+
+Route::get('/form', 'FormController@index')->name('form');
+Route::post('/proses', 'FormController@proses')->name('proses.form');
+
